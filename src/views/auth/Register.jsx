@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // imagens
 // assets/img/github.svg
@@ -123,7 +124,16 @@ export default function Register() {
                   </form>
                 </div>
               </div>
+              <div className="mt-6 relative">
+                <div className="text-right">
+                  <Link to="/login" className="text-slate-200">
+                    <small>Sign in</small>
+                  </Link>
+                </div>
+              </div>
+
             </div>
+
           </div>
         </div>
     </>

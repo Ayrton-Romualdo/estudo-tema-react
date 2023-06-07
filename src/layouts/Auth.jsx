@@ -1,15 +1,22 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import imgRegisterBg2 from './../assets/img/register_bg_2.png'
 
 // components
 
 import Navbar from "./../components/Navbars/AuthNavbar.jsx";
 import FooterSmall from "./../components/Footers/FooterSmall.jsx";
+import { userStateContext } from "../contexts/ContextProvider";
 
 // views
 
 export default function Auth() {
+  const { currentUser, userToken } = userStateContext();
+
+  if(userToken){
+    return <Navigate to='/admin' exact/>
+  }
+
   return (
     <>
       <Navbar transparent />

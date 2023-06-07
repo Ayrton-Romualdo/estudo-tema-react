@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import { usePopper } from "react-popper";
 import { createPopper } from "@popperjs/core";
 import imgUrl from './../../../src/assets/img/team-1-800x800.jpg'
+import { userStateContext } from "../../contexts/ContextProvider";
 
-const UserDropdown = () => {
+export default function UserDropdown() {
+
+  const { currentUser } = userStateContext();
+
+// const UserDropdown = () => {
   const [dropDown, setDropDown] = useState(false);
   const [referenceEl, setReferenceEl] = useState(null);
   const [popperEl, setPopperEl] = useState(null);
@@ -42,6 +47,7 @@ const UserDropdown = () => {
     // setDropdownPopoverShow(false);
     setPopoverDropdownRef(false);
   };
+
   return (
     <>
       <button tabIndex="-1" onClick={(e) => {e.preventDefault(); fecharPopper() }} className={(dropDown ? "fixed" : "hidden") + " cursor-default focus:outline-none inset-0 h-full w-full bg-black/25"}></button>
@@ -79,7 +85,7 @@ const UserDropdown = () => {
           }
           onClick={(e) => e.preventDefault()}
         >
-          Action
+          { currentUser.name }
         </a>
         <a
           href="#pablo"
@@ -88,7 +94,7 @@ const UserDropdown = () => {
           }
           onClick={(e) => e.preventDefault()}
         >
-          Another action
+          { currentUser.email }
         </a>
         <a
           href="#pablo"
@@ -114,4 +120,4 @@ const UserDropdown = () => {
   );
 };
 
-export default UserDropdown;
+// export default UserDropdown;

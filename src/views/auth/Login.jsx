@@ -109,7 +109,7 @@ export default function Login() {
                 </a>
               </div>
               <div className="w-1/2 text-right">
-                <Link to="/auth/register" className="text-slate-200">
+                <Link to="/register" className="text-slate-200">
                   <small>Create new account</small>
                 </Link>
               </div>

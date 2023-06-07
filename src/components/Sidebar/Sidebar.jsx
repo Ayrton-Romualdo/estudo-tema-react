@@ -13,7 +13,6 @@ function classNames(...classes) {
 
 export default function Sidebar() {
   const [collapseShow, setCollapseShow] = React.useState("hidden");
-  console.log(window.location.href.indexOf("/admin/dashboard"))
 
   return (
     <>
